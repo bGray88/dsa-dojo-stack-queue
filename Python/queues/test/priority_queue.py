@@ -82,3 +82,17 @@ class TestExample:
         assert pytest.priority_queue.queue_wait("FE254") == 3
         assert pytest.priority_queue.queue_wait("IQ666") == 2
         assert pytest.priority_queue.queue_wait("AT864") == 1
+
+    def test_empty_queue(self, setup_config):
+        assert pytest.priority_queue.queue_wait("UA352") == None
+        assert pytest.priority_queue.queue_wait("FE254") == None
+        assert pytest.priority_queue.next() == None
+        assert pytest.priority_queue.peek() == None
+        assert pytest.priority_queue.status() == '{' + '\n'\
+                + '\t0 => 0,\n'\
+                + '\t1 => 0,\n'\
+                + '\t2 => 0,\n'\
+                + '\t3 => 0,\n'\
+                + '\t4 => 0,\n'\
+                + '\t5 => 0,\n'\
+            + '}'

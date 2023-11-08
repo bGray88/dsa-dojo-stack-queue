@@ -22,11 +22,12 @@ class PriorityQueue(Queue):
 
     def queue_wait(self, obj_name):
         count = 0
+        found = False
         for queue in self.data:
             current, found = queue.find_place(obj_name)
             count += current
             if found: break
-        return count
+        return count if found else None
 
     def enqueue(self, pos, obj):
         self.planes += 1

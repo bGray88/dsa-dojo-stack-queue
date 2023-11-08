@@ -22,7 +22,6 @@ class TestExample:
 
     # ======TEST======
     # ----------------
-
     def test_it_enqueues(self, setup_config):
         pytest.queue.enqueue("A")
         pytest.queue.enqueue("B")

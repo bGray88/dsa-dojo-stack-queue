@@ -12,16 +12,16 @@ def setup_config():
     # Teardown configuration
 
 class TestExample:
-    # ===SETUP===
-    # -----------
+    # =====SETUP=====
+    # ---------------
     def setup_method(self, method):
         pytest.stack = Stack()
 
     def teardown_method(self, method):
         pytest.stack = ""
 
-    # ===TEST===
-    # -----------
+    # ======TEST======
+    # ----------------
     def test_i_peeks(self, setup_config):
         pytest.stack.push("A")
         pytest.stack.push("B")

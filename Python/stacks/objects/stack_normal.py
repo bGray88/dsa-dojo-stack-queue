@@ -1,3 +1,5 @@
+import copy
+
 class Stack:
     VALID_OPEN  = { '{': '}', '[': ']', '(': ')' }
     VALID_CLOSE = { '}': '{', ']': '[', ')': '(' }
@@ -32,7 +34,7 @@ class Stack:
         return ''.join(self.data)
     
     def validate(self):
-        tmp_stack = self.data
+        tmp_stack = copy.deepcopy(self.data)
         tmp_stack.reverse()
         collect   = []
         while tmp_stack:

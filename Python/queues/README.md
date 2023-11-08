@@ -11,7 +11,7 @@ Beyond those essentials, implement the following:
 
 * `count` returns the number of elements in the queue
 * `peek` returns the value of the front element without removing it
-* `last` retuns the value of the last element without removing it
+* `last` returns the value of the last element without removing it
 * `empty` returns a true if the queue is empty, false if not
 
 ### Implementation Challenge

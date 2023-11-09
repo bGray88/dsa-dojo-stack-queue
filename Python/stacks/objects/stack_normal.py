@@ -44,4 +44,4 @@ class Stack:
             else:
                 if not collect or Stack.VALID_CLOSE.get(last) != collect.pop():
                     return False
-        return True
+        return False if collect else True

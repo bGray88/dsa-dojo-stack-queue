@@ -72,6 +72,12 @@ class TestExample:
             pytest.stack.push(char)
         
         assert pytest.stack.validate() == True
+        string = "[[]"
+
+        for char in string:
+            pytest.stack.push(char)
+        
+        assert pytest.stack.validate() == False
         pytest.stack = Stack()
         string = "({)}"
 

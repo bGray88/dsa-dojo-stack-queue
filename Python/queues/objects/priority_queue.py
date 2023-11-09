@@ -18,7 +18,24 @@ class PriorityQueue(Queue):
         self.time += i
 
     def audit(self):
-        pass
+        tmp = []
+        for idx, queue in enumerate(self.data):
+            while not queue.empty() and idx:
+                tmp.append(queue.dequeue())
+        for plane in tmp:
+            diff_time   = self.time - int(plane.expected_departure)
+            recov_time  = (int(plane.expected_landing) - int(plane.expected_departure)) * 0.8
+            adjstd_time = self.time + recov_time
+            
+            if diff_time > 0 and diff_time <= 15:
+                self.enqueue(1, plane)
+            elif adjstd_time > int(plane.expected_departure) and adjstd_time <= int(plane.expected_landing):
+                self.enqueue(2, plane)
+            elif int(plane.expected_departure) > self.time:
+                self.enqueue(3, plane)
+            else:
+                self.enqueue(4, plane)
+        
 
     def queue_wait(self, obj_name):
         count = 0

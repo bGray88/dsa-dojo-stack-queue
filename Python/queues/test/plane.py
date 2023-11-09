@@ -15,7 +15,7 @@ class TestExample:
     # =====SETUP=====
     # ---------------
     def setup_method(self, method):
-        pytest.plane1 = Plane("Red Baron", '510', '615')
+        pytest.plane1 = Plane("UA352", '510', '615')
 
 
     def teardown_method(self, method):
@@ -24,6 +24,6 @@ class TestExample:
     # ======TEST======
     # ----------------
     def test_it_creates(self, setup_config):
-        assert pytest.plane1.name == "Red Baron"
+        assert pytest.plane1.name == "UA352"
         assert pytest.plane1.expected_departure == "510"
         assert pytest.plane1.expected_landing == "615"

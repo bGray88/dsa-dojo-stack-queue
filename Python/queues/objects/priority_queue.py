@@ -1,8 +1,8 @@
 from .queue_normal import Queue
 
-class PriorityQueue(Queue):
+class PriorityQueue:
     def __init__(self):
-        super().__init__()
+        self.data = []
         self.planes = 0
         self.time   = 0
         for _ in range(6):
@@ -35,7 +35,6 @@ class PriorityQueue(Queue):
                 self.enqueue(3, plane)
             else:
                 self.enqueue(4, plane)
-        
 
     def queue_wait(self, obj_name):
         count = 0
